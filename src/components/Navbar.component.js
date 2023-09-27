@@ -8,7 +8,7 @@ function Navbar() {
         Fitfolio
       </Link>
       <div className="collapse navbar-collapse">
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav ms-auto">
           <li className="nav-item ">
             <Link to="/" className="nav-link">
               Exercises
