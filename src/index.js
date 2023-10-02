@@ -2,25 +2,27 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for the toast styles
 
-//importing components
+// importing components
 import Navbar from "./components/Navbar.component";
-import ExercisesList from "./components/CreateUser.component";
-import create_exercise from "./components/CreateExercise.component";
-import edit_exercise from "./components/EditExercise.component";
-import create_user from "./components/CreateUser.component";
+import ExercisesList from "./components/ExerciseList.component";
+import CreateExercise from "./components/CreateExercise.component";
+import EditExercise from "./components/EditExercise.component";
+import CreateUser from "./components/CreateUser.component";
 
 const App = () => {
   return (
     <Router>
       <div className="container">
-        {/* <h1> welcome</h1>; */}
         <Navbar />
+        <ToastContainer /> {/* Add this line for the toast container */}
         <Routes>
-          <Route path="/" exact Component={ExercisesList} />
-          <Route path="/edit/:id" Component={edit_exercise} />
-          <Route path="/create" Component={create_exercise} />
-          <Route path="/user" Component={create_user} />
+          <Route path="/" element={<ExercisesList />} />{" "}
+          <Route path="/edit/:id" element={<EditExercise />} />{" "}
+          <Route path="/create" element={<CreateExercise />} />{" "}
+          <Route path="/user" element={<CreateUser />} />{" "}
         </Routes>
       </div>
     </Router>

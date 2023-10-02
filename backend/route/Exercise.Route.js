@@ -35,7 +35,7 @@ router.route("/:id").get((req, res) => {
     .catch((err) => res.status(400).json("Error:" + err));
 });
 
-router.route("/delete/:id").get((req, res) => {
+router.route("/delete/:id").delete((req, res) => {
   let id = req.params.id;
   ExerciseModel.findByIdAndDelete(id)
     .then(() => res.json("Exercise Deleted"))
